@@ -1,0 +1,494 @@
+[{
+  "_id": "610f45063cc639e11423e383",
+  "names": {
+    "en": "Vegetables",
+    "vn": "Rau củ",
+    "kr": "야채"
+  }
+},{
+  "_id": "610f45063cc639e11423e384",
+  "names": {
+    "en": "Seafood",
+    "vn": "Thủy sản",
+    "kr": "수산물"
+  }
+},{
+  "_id": "610f45063cc639e11423e385",
+  "names": {
+    "en": "Meat",
+    "vn": "Thịt",
+    "kr": "축산물"
+  }
+},{
+  "_id": "610f45063cc639e11423e386",
+  "names": {
+    "en": "Ingridient/ Seasoning",
+    "vn": "NguyÊn LiỆu/ Gia VỊ",
+    "kr": "양념류"
+  }
+},{
+  "_id": "610f45063cc639e11423e387",
+  "names": {
+    "en": "Processed Food",
+    "vn": "Thực Phẩm Chế Biến",
+    "kr": "가공식품"
+  }
+},{
+  "_id": "610f45063cc639e11423e388",
+  "names": {
+    "en": "Beverage",
+    "vn": "Thức Uống",
+    "kr": "음료"
+  }
+},{
+  "_id": "610f45063cc639e11423e389",
+  "names": {
+    "en": "Dairy Product",
+    "vn": "Thực Phẩm Làm Từ Sữa",
+    "kr": "유가공품"
+  }
+},{
+  "_id": "610f45063cc639e11423e38a",
+  "names": {
+    "en": "Equipment",
+    "vn": "Thiết Bị",
+    "kr": "주방용품"
+  }
+},{
+  "_id": "610f45063cc639e11423e38b",
+  "names": {
+    "en": "Fruit",
+    "vn": "Trái Cây",
+    "kr": "과일"
+  }
+},{
+  "_id": "610f45063cc639e11423e38c",
+  "names": {
+    "en": "Grain",
+    "vn": "Lương Thực",
+    "kr": "쌀/면/제빵류"
+  }
+},{
+  "_id": "610f45063cc639e11423e38d",
+  "names": {
+    "en": "Stationery",
+    "vn": "Văn Phòng Phẩm",
+    "kr": "사무용품"
+  }
+},{
+  "_id": "610f45063cc639e11423e38e",
+  "names": {
+    "en": "Fresh Vegetables",
+    "vn": "Rau Củ Tươi",
+    "kr": "신선야채"
+  },
+  "parent": "610f45063cc639e11423e383"
+},{
+  "_id": "610f45063cc639e11423e392",
+  "names": {
+    "en": "Fish",
+    "vn": "Cá",
+    "kr": "생선류"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e399",
+  "names": {
+    "en": "Pork",
+    "vn": "Thịt Heo",
+    "kr": "돼지고기"
+  },
+  "parent": "610f45063cc639e11423e385"
+},{
+  "_id": "610f45063cc639e11423e3a0",
+  "names": {
+    "en": "Spices",
+    "vn": "Gia Vị",
+    "kr": "향신료"
+  },
+  "parent": "610f45063cc639e11423e386"
+},{
+  "_id": "610f45063cc639e11423e3a5",
+  "names": {
+    "en": "Fresh",
+    "vn": "Tươi",
+    "kr": "신선식품"
+  },
+  "parent": "610f45063cc639e11423e387"
+},{
+  "_id": "610f45063cc639e11423e3a9",
+  "names": {
+    "en": "Soft Drinks",
+    "vn": "Nước Giải Khát",
+    "kr": "음료"
+  },
+  "parent": "610f45063cc639e11423e388"
+},{
+  "_id": "610f45063cc639e11423e3ac",
+  "names": {
+    "en": "Milk",
+    "vn": "Sữa",
+    "kr": "우류"
+  },
+  "parent": "610f45063cc639e11423e389"
+},{
+  "_id": "610f45063cc639e11423e3b1",
+  "names": {
+    "en": "Essential Equipments",
+    "vn": "Thiết Bị ăn Uống",
+    "kr": "필수용품"
+  },
+  "parent": "610f45063cc639e11423e38a"
+},{
+  "_id": "610f45063cc639e11423e3b6",
+  "names": {
+    "en": "Imported Fruits",
+    "vn": "Trái Cây Nhập Khẩu",
+    "kr": "수입과일"
+  },
+  "parent": "610f45063cc639e11423e38b"
+},{
+  "_id": "610f45063cc639e11423e3ba",
+  "names": {
+    "en": "Rice",
+    "vn": "Gạo",
+    "kr": "곡식류"
+  },
+  "parent": "610f45063cc639e11423e38c"
+},{
+  "_id": "610f45063cc639e11423e3bf",
+  "names": {
+    "en": "Writing",
+    "vn": "Bút/viết",
+    "kr": "필기류"
+  },
+  "parent": "610f45063cc639e11423e38d"
+},{
+  "_id": "610f45063cc639e11423e38f",
+  "names": {
+    "en": "Other Vegetables",
+    "vn": "Các Loại Rau Củ Khác",
+    "kr": "기타 농산물"
+  },
+  "parent": "610f45063cc639e11423e383"
+},{
+  "_id": "610f45063cc639e11423e393",
+  "names": {
+    "en": "Shellfish",
+    "vn": "Thuỷ Sản Có Vỏ",
+    "kr": "조개류"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e39a",
+  "names": {
+    "en": "Beef",
+    "vn": "Thịt Bò",
+    "kr": "소고기"
+  },
+  "parent": "610f45063cc639e11423e385"
+},{
+  "_id": "610f45063cc639e11423e3a1",
+  "names": {
+    "en": "Cooking Oil",
+    "vn": "Dầu ăn",
+    "kr": "식용유"
+  },
+  "parent": "610f45063cc639e11423e386"
+},{
+  "_id": "610f45063cc639e11423e3a6",
+  "names": {
+    "en": "Frozen",
+    "vn": "đông Lạnh",
+    "kr": "냉동식품"
+  },
+  "parent": "610f45063cc639e11423e387"
+},{
+  "_id": "610f45063cc639e11423e3aa",
+  "names": {
+    "en": "Alcoholic Drinks",
+    "vn": "Thức Uống Có Cồn",
+    "kr": "주류"
+  },
+  "parent": "610f45063cc639e11423e388"
+},{
+  "_id": "610f45063cc639e11423e3ad",
+  "names": {
+    "en": "Butter",
+    "vn": "Bơ",
+    "kr": "버터"
+  },
+  "parent": "610f45063cc639e11423e389"
+},{
+  "_id": "610f45063cc639e11423e3b2",
+  "names": {
+    "en": "Eating Utensils",
+    "vn": "Dụng Cụ Nấu ăn",
+    "kr": "식기류"
+  },
+  "parent": "610f45063cc639e11423e38a"
+},{
+  "_id": "610f45063cc639e11423e3b7",
+  "names": {
+    "en": "Fruit",
+    "vn": "Trái Cây",
+    "kr": "과일"
+  },
+  "parent": "610f45063cc639e11423e38b"
+},{
+  "_id": "610f45063cc639e11423e3bb",
+  "names": {
+    "en": "Noodles",
+    "vn": "Mì",
+    "kr": "면류"
+  },
+  "parent": "610f45063cc639e11423e38c"
+},{
+  "_id": "610f45063cc639e11423e3c0",
+  "names": {
+    "en": "Paper",
+    "vn": "Giấy",
+    "kr": "종이류"
+  },
+  "parent": "610f45063cc639e11423e38d"
+},{
+  "_id": "610f45063cc639e11423e390",
+  "names": {
+    "en": "mushroom",
+    "vn": "Nấm",
+    "kr": "버섯류"
+  },
+  "parent": "610f45063cc639e11423e383"
+},{
+  "_id": "610f45063cc639e11423e394",
+  "names": {
+    "en": "Shrimp/ Lobster/ Crayfish",
+    "vn": "Tôm",
+    "kr": "새우류"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e39b",
+  "names": {
+    "en": "Poultry",
+    "vn": "Gia Cầm",
+    "kr": "가금류"
+  },
+  "parent": "610f45063cc639e11423e385"
+},{
+  "_id": "610f45063cc639e11423e3a2",
+  "names": {
+    "en": "Sauce",
+    "vn": "Xốt",
+    "kr": "소스"
+  },
+  "parent": "610f45063cc639e11423e386"
+},{
+  "_id": "610f45063cc639e11423e3a7",
+  "names": {
+    "en": "Dried",
+    "vn": "Sấy Khô",
+    "kr": "상온식품"
+  },
+  "parent": "610f45063cc639e11423e387"
+},{
+  "_id": "610f45063cc639e11423e3ab",
+  "names": {
+    "en": "Other Beverages",
+    "vn": "Các Loại Thức Uống Khác",
+    "kr": "기타음료"
+  },
+  "parent": "610f45063cc639e11423e388"
+},{
+  "_id": "610f45063cc639e11423e3ae",
+  "names": {
+    "en": "Cream",
+    "vn": "Cream",
+    "kr": "크림"
+  },
+  "parent": "610f45063cc639e11423e389"
+},{
+  "_id": "610f45063cc639e11423e3b3",
+  "names": {
+    "en": "Baking Equipment",
+    "vn": "Thiết Bị Pha Chế",
+    "kr": "베이커리 용품"
+  },
+  "parent": "610f45063cc639e11423e38a"
+},{
+  "_id": "610f45063cc639e11423e3b8",
+  "names": {
+    "en": "Dried Fruit",
+    "vn": "Trái Cây Sấy Khô",
+    "kr": "건조과일"
+  },
+  "parent": "610f45063cc639e11423e38b"
+},{
+  "_id": "610f45063cc639e11423e3bc",
+  "names": {
+    "en": "Bread",
+    "vn": "Bột",
+    "kr": "제빵류"
+  },
+  "parent": "610f45063cc639e11423e38c"
+},{
+  "_id": "610f45063cc639e11423e3c1",
+  "names": {
+    "en": "Other Stationery",
+    "vn": "Văn Phòng Phẩm Khác",
+    "kr": "기타 사무용품"
+  },
+  "parent": "610f45063cc639e11423e38d"
+},{
+  "_id": "610f45063cc639e11423e391",
+  "names": {
+    "en": "Frozen Vegetables",
+    "vn": "Rau Củ đông Lạnh",
+    "kr": "냉동야채"
+  },
+  "parent": "610f45063cc639e11423e383"
+},{
+  "_id": "610f45063cc639e11423e395",
+  "names": {
+    "en": "Crab",
+    "vn": "Cua",
+    "kr": "갑각류"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e39c",
+  "names": {
+    "en": "Eggs",
+    "vn": "Trứng",
+    "kr": "달걀"
+  },
+  "parent": "610f45063cc639e11423e385"
+},{
+  "_id": "610f45063cc639e11423e3a3",
+  "names": {
+    "en": "Seasoning Powder",
+    "vn": "Bột Gia Vị",
+    "kr": "조미료"
+  },
+  "parent": "610f45063cc639e11423e386"
+},{
+  "_id": "610f45063cc639e11423e3a8",
+  "names": {
+    "en": "Other processed food",
+    "vn": "Thực phẩm chế biến khác",
+    "kr": "기타 가공 식품"
+  },
+  "parent": "610f45063cc639e11423e387"
+},{
+  "_id": "610f45063cc639e11423e3af",
+  "names": {
+    "en": "Cheese",
+    "vn": "Phô Mai",
+    "kr": "치즈"
+  },
+  "parent": "610f45063cc639e11423e389"
+},{
+  "_id": "610f45063cc639e11423e3b4",
+  "names": {
+    "en": "Barista Equipment",
+    "vn": "Thiết Bị Thiết Yếu",
+    "kr": "바리스타 용품"
+  },
+  "parent": "610f45063cc639e11423e38a"
+},{
+  "_id": "610f45063cc639e11423e3b9",
+  "names": {
+    "en": "Other Fruits",
+    "vn": "Trái Cây Khác",
+    "kr": "기타과일"
+  },
+  "parent": "610f45063cc639e11423e38b"
+},{
+  "_id": "610f45063cc639e11423e3bd",
+  "names": {
+    "en": "Flour",
+    "vn": "Bánh Mì",
+    "kr": "제분류"
+  },
+  "parent": "610f45063cc639e11423e38c"
+},{
+  "_id": "610f45063cc639e11423e396",
+  "names": {
+    "en": "Dried/ Canned Fish",
+    "vn": "Cá Sấy Khô/ đóng Gói",
+    "kr": "건조/가공식품"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e39d",
+  "names": {
+    "en": "Lamb",
+    "vn": "Thịt Cừu",
+    "kr": "양고기"
+  },
+  "parent": "610f45063cc639e11423e385"
+},{
+  "_id": "610f45063cc639e11423e3a4",
+  "names": {
+    "en": "Other ingridient/seasoning",
+    "vn": "Nguyên liệu/ gia vị khác",
+    "kr": "기타 재료 / 조미료"
+  },
+  "parent": "610f45063cc639e11423e386"
+},{
+  "_id": "610f45063cc639e11423e3b0",
+  "names": {
+    "en": "Other Dairy Products",
+    "vn": "Các Loại Thực Phẩm Làm Từ Sữa Khác",
+    "kr": "기타 유가공품"
+  },
+  "parent": "610f45063cc639e11423e389"
+},{
+  "_id": "610f45063cc639e11423e3b5",
+  "names": {
+    "en": "Other Equipments",
+    "vn": "Các Thiết Bị Khác",
+    "kr": "기타 용품"
+  },
+  "parent": "610f45063cc639e11423e38a"
+},{
+  "_id": "610f45063cc639e11423e3be",
+  "names": {
+    "en": "Other Grain",
+    "vn": "Các Loại Lương Thực Khác",
+    "kr": "기타곡물류"
+  },
+  "parent": "610f45063cc639e11423e38c"
+},{
+  "_id": "610f45063cc639e11423e397",
+  "names": {
+    "en": "Squid/ Octopus/ Jellyfish",
+    "vn": "Mực/ Bạch Tuột/ Sứa",
+    "kr": "연체류"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e39e",
+  "names": {
+    "en": "Other Meats",
+    "vn": "Các Loại Thịt Khác",
+    "kr": "기타 축산물"
+  },
+  "parent": "610f45063cc639e11423e385"
+},{
+  "_id": "610f45063cc639e11423e398",
+  "names": {
+    "en": "Other Seafood",
+    "vn": "Các Loại Thuỷ Sản Khác",
+    "kr": "기타 해산물"
+  },
+  "parent": "610f45063cc639e11423e384"
+},{
+  "_id": "610f45063cc639e11423e39f",
+  "names": {
+    "en": "Dried/ Canned/ Processed Meat",
+    "vn": "Sấy Khô/ đóng Hộp/ Thịt Chế Biến",
+    "kr": "육가공품"
+  },
+  "parent": "610f45063cc639e11423e385"
+}]
