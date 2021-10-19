@@ -38,3 +38,6 @@ docker-compose up
 
 If you see these messages. Congratulation it install successfully !!! <br/>
 ![Screen Shot 2021-10-19 at 10 54 01 AM](https://user-images.githubusercontent.com/51083161/137841202-cefae8e7-1ce3-4f39-abd3-e1dff8ea3074.png)
+
+## III. Check Wiki to see more how to use
+> https://github.com/duyhuynh55110/commerce-nodejs-api/wiki
