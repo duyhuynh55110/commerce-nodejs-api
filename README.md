@@ -44,4 +44,4 @@ Connect to MongoDB using MongoDB Compass
 > https://github.com/duyhuynh55110/commerce-nodejs-api/wiki/01.--Connect-to-MongoDB-using-MongoDB-Compass
 
 How to run API using Postman
-https://github.com/duyhuynh55110/commerce-nodejs-api/wiki/02.-How-to-run-API-using-Postman
+> https://github.com/duyhuynh55110/commerce-nodejs-api/wiki/02.-How-to-run-API-using-Postman
