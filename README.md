@@ -1,11 +1,11 @@
-# Commerce Nodejs API (Nodejs, Docker)
+# Commerce Nodejs API (Nodejs, MongoDB, Docker)
 
 ## I. Description
 -------
-- Demo project using **Nodejs**, **Mongodb** and **Docker** to develop
+- Demo project using **Nodejs**, **MongoDB** and **Docker** to develop
 - Purpose you need to get when develop this project 
     + Basic folder structure for a nodejs project
-    + How to build REST API use **Nodejs**, **Mongodb**
+    + How to build REST API use **Nodejs**, **MongoDB**
     + Understand how to build and run **Docker**
 
 ## II. Getting Started
@@ -36,5 +36,5 @@ Run docker container
 docker-compose up
 ```
 
-If you see this message. Congratulation it install successfully
-> Image here
+If you see these messages. Congratulation it install successfully !!! <br/>
+![Screen Shot 2021-10-19 at 10 54 01 AM](https://user-images.githubusercontent.com/51083161/137841202-cefae8e7-1ce3-4f39-abd3-e1dff8ea3074.png)
