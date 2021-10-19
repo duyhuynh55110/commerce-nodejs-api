@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "425623a2-78fa-41e3-8d92-82273c4bab7d",
+		"name": "commerce-nodejs-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/companies?limit=10&page=1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"companies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/products?limit=10&page=1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{API_URL}}/products/:id",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "616e2d1e8ceeb00ffd7bf52e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"description": "imagetype .png, .jpg",
+									"type": "file",
+									"src": "/Users/macbook/Desktop/Blackpink_Lisa_Vogue_2021.png"
+								},
+								{
+									"key": "price",
+									"value": "22000",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "610f45063cc639e11423e3b7",
+									"description": "categories._id",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "616e2d1e8ceeb00ffd7bf49c",
+									"description": "companies._id",
+									"type": "text"
+								},
+								{
+									"key": "description_en",
+									"value": "Description EN",
+									"type": "text"
+								},
+								{
+									"key": "description_vn",
+									"value": "Description VNBN",
+									"type": "text"
+								},
+								{
+									"key": "description_kr",
+									"value": "Description KR",
+									"type": "text"
+								},
+								{
+									"key": "name_en",
+									"value": "Apple",
+									"type": "text"
+								},
+								{
+									"key": "name_vn",
+									"value": "Táo",
+									"type": "text"
+								},
+								{
+									"key": "name_kr",
+									"value": "타오",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/products/create",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/categories?limit=10&page=1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
