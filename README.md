@@ -50,4 +50,4 @@ Create template data
 > https://github.com/duyhuynh55110/commerce-nodejs-api/wiki/99.-Data-Seeder
 
 Some Useful NPM command
-> https://github.com/duyhuynh55110/commerce-nodejs-api/wiki/98.-NPM-useful-command
+> https://github.com/duyhuynh55110/commerce-nodejs-api/wiki/98.-Useful-NPM-command
