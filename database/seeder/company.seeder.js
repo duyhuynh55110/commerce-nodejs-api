@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // model
 const mongoose = require("mongoose")
 const Company = mongoose.model('Company')
@@ -29,7 +31,7 @@ class CompanySeeder extends BaseSeeder {
             }
         
             return {
-                _id: index == 0 ? '616e2d1e8ceeb00ffd7bf49c' : null,
+                _id: index == 0 ? process.env.COMPANY_ID_SEEDER : null,
                 role: randomNumber(ROLE_SUPPLIER, ROLE_BUYER),
                 inform: {
                     tax_code: _randomTaxCode(), // random number length 11

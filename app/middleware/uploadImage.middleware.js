@@ -6,13 +6,7 @@ const ValidationHttpError = require('@errors/validationHttp.error')
 
 const multer = require('multer')
 const path = require('path')
-const crypto = require('crypto')
-
-// Create random hash name
-const _hashName = () => {
-  let hash = crypto.randomBytes(32).toString('hex') // create hash name
-  return hash;
-}
+const { hashName } = require('@common')
 
 // Config storage for upload files
 const storage = multer.diskStorage({
@@ -21,7 +15,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     // file.fieldname is name of the field (image)
     // path.extname get the uploaded file extension
-    let fileName = _hashName() + path.extname(file.originalname)
+    let fileName = hashName() + path.extname(file.originalname)
 
     cb(null, fileName)
   }
