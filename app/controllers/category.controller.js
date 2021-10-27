@@ -7,6 +7,9 @@ const CategoryResource = require('@resources/category.resource')
 // Base Controller
 const BaseController = require('./base.controller')
 
+// Redis
+const redis = require('@server/redis')
+
 class CategoryController extends BaseController {
     constructor() {
         super()
@@ -21,6 +24,10 @@ class CategoryController extends BaseController {
 
         // Response
         let response = this.responseCollection(categories)
+
+        // Save the  API response in Redis store,  data expire time in 3600 seconds, it means one hour
+        redis.setCache('categories', response)
+
         res.send(response) 
     }
 }

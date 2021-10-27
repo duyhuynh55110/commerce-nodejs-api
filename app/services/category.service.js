@@ -5,7 +5,7 @@ class CategoryService {
         const select = {
             'name': "$names.en"
         };
-        return categoryRepo.paginate(select, limit, page).then(result => result[0]);
+        return categoryRepo.paginate({select, limit, page}).then(result => result[0]);
     }
 }
 

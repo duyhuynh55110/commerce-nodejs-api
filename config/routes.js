@@ -37,7 +37,7 @@ module.exports = function(app, passport) {
 
     // === Define routes
     // Companies
-    app.get('/companies', companyController.index)
+    app.get('/companies', [redis.cacheMiddleware('companies')], companyController.index)
 
     // Products
     app.post('/products/create', [imageUpload.single('image'),  productFormRequest.validateRequiredImage('image'), productFormRequest.validate()], productController.store)
@@ -45,7 +45,7 @@ module.exports = function(app, passport) {
     app.get('/products', productController.index)
 
     // Categories
-    app.get('/categories', categoryController.index)
+    app.get('/categories', [redis.cacheMiddleware('categories')], categoryController.index)
 
     // === Middleware call AFTER run route (HTTP response)
     // error handling middleware

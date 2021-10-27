@@ -27,9 +27,7 @@ class BaseController {
                 prev_page: metaData.prev_page,
                 next_page: metaData.next_page,
             }
-        } else {
-            data = { data: collection }
-        }
+        } 
 
         return {
             code: HTTP_CODE_OK,

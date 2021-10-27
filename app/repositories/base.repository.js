@@ -177,6 +177,9 @@ class BaseRepository {
 
   // [Paginate] Set filter condition
   _setMatch(sort, lastDoc, match, page) {
+    // if not have any record
+    if(!lastDoc) return match;
+    
     let filterSort = [];
     let skipLastDoc = {};
 
