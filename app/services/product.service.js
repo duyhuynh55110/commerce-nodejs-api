@@ -60,7 +60,7 @@ class ProductService {
     };
 
     if (req.file) {
-      data.image = req.file.path;
+      data.image = req.file.filename;
 
       // resize image
       resizeImageStorage(req.file);
