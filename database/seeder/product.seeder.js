@@ -15,13 +15,6 @@ const faker = require("faker/locale/en");
 // Common
 const { randomNumber } = require("@common");
 
-// Root path
-const rootPath = require('app-root-path');
-
-//include the fs, path modules
-var fs = require('fs-extra');
-const { hashName } = require("@common");
-
 class ProductSeeder extends BaseSeeder {
   constructor() {
     super();
@@ -52,7 +45,8 @@ class ProductSeeder extends BaseSeeder {
       let categoryId = categoryIds[randomNumber(0, categoryIds.length - 1)];
       let companyId = companyIds[randomNumber(0, companyIds.length - 1)];
 
-      let imageName = _this.copyProductImage(rootPath + '/storage/templates/products/1.png', rootPath + '/storage/uploads/');
+      let randomProductImage = randomNumber(1, 25);
+      let imageName = _this.copyTemplateImage(`/storage/templates/products/${randomProductImage}.png`, '/storage/uploads/');
       
       return {
         price: parseInt(faker.commerce.price()),
@@ -72,15 +66,6 @@ class ProductSeeder extends BaseSeeder {
       };
     });
   };
-
-  // Copy file and return copy file name
-  copyProductImage = (file, dir2) => {
-    //gets file name and adds it to dir2
-    var fileName = hashName() + ".png";
-    fs.copySync(file, dir2 + `/${fileName}`);
-
-    return fileName; 
-  }
 }
 
 module.exports = new ProductSeeder();
