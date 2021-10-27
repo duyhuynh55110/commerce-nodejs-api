@@ -35,13 +35,13 @@ class CompanySeeder extends BaseSeeder {
 
             return {
                 _id: index == 0 ? process.env.COMPANY_ID_SEEDER : null,
-                image: imageName,
                 inform: {
                     tax_code: _randomTaxCode(), // random number length 11
                     name: faker.company.companyName(),
                     address: faker.address.streetAddress(),
                     phone: faker.phone.phoneNumber('##########'),
                     email: faker.internet.email(),
+                    image: imageName,
                 }
             }
         })

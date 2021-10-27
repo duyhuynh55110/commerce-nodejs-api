@@ -1,4 +1,5 @@
 const Resource = require('resources.js');
+const { uploadImageUrl } = require('@common');
 
 class CompanyResource extends Resource {
     toArray() {
@@ -10,6 +11,7 @@ class CompanyResource extends Resource {
             address: this.inform.address,
             phone: this.inform.phone,
             email: this.inform.email,
+            image: uploadImageUrl(this.inform.image),
         }
     }
 }

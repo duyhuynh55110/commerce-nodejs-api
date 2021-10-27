@@ -3,10 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const CompanySchema = new Schema({
-    image: {
-        type: String,
-        required: true,
-    },
     inform: {
         tax_code: {
             type: String,
@@ -16,6 +12,7 @@ const CompanySchema = new Schema({
         address: String,
         phone: String,
         email: String,
+        image: String,
     },
 }, { collection : 'companies', versionKey: false })
 
