@@ -19,7 +19,13 @@ const randomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// Check this object is empty or not
+const isEmptyObj = (obj) => {
+    return Object.keys(obj).length === 0;
+}
+
 module.exports = {
     resizeImageStorage,
     randomNumber,
+    isEmptyObj,
 }

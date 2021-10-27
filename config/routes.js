@@ -21,8 +21,14 @@ const imageUpload = require('@middleware/uploadImage.middleware')
 // Request
 const productFormRequest = require('../app/requests/productForm.request')
 
+// CORS
+const cors = require('cors')
+
 module.exports = function(app, passport) {
     // === Middleware call BEFORE run route (HTTP request)
+    // Enable CORS
+    app.use(cors())
+
     // support for parsing application/json
     app.use(express.json())
     
@@ -36,7 +42,7 @@ module.exports = function(app, passport) {
     // Products
     app.post('/products/create', [imageUpload.single('image'),  productFormRequest.validateRequiredImage('image'), productFormRequest.validate()], productController.store)
     app.get('/products/:id', productController.show)
-    app.get('/products', [redis.cacheMiddleware('products')], productController.index)
+    app.get('/products', productController.index)
 
     // Categories
     app.get('/categories', categoryController.index)

@@ -9,11 +9,8 @@ class ProductResource extends Resource {
             id: this._id,
             price: this.price,
             name: this.name,
+            description: this.description,
         };
-
-        if(this.description) {
-            response.description = this.description;
-        }
 
         if(this.company) {
             response.company = new companyResource(this.company).exec();

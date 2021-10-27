@@ -1,9 +1,10 @@
-const { API_MESSAGE_SUCCESS } = require('@lib/constants')
+const { API_MESSAGE_SUCCESS, HTTP_CODE_OK } = require('@lib/constants')
 
 class BaseController {
     // Response data single 
     responseSingle = (data) => {
         return {
+            code: HTTP_CODE_OK,
             data: data,
             message: API_MESSAGE_SUCCESS 
         }
@@ -31,6 +32,7 @@ class BaseController {
         }
 
         return {
+            code: HTTP_CODE_OK,
             ...data,
             message: message /* Or optional success message */
         }

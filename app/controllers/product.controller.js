@@ -29,7 +29,7 @@ class ProductController extends BaseController {
         // Save the  API response in Redis store,  data expire time in 3600 seconds, it means one hour
         redis.setCache('products', response)
         
-        res.send(response)
+        res.send(products)
     }
 
     // Show a product inform
