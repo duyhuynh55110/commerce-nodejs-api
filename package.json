@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "seeder": "node database/seeder"
+    "seeder": "node database/seeder",
+    "clear-uploads": "node app/console/commands/clearStorageUploads"
   },
   "author": "",
   "license": "ISC",
