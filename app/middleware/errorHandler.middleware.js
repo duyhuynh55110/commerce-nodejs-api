@@ -1,5 +1,4 @@
 const { HTTP_CODE_INTERNAL_SERVER_ERROR } = require('@lib/constants')
-const logger = require('@server/logger')
 
 // Format error response
 const _errorFormat = (error) => {

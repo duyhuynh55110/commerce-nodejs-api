@@ -2,6 +2,7 @@ const Resource = require('resources.js');
 
 const companyResource = require('@resources/company.resource');
 const categoryResource = require('@resources/category.resource');
+const { uploadImageUrl } = require('@common');
 
 class ProductResource extends Resource {
     toArray() {
@@ -10,6 +11,7 @@ class ProductResource extends Resource {
             price: this.price,
             name: this.name,
             description: this.description,
+            image: uploadImageUrl(this.image),
         };
 
         if(this.company) {
