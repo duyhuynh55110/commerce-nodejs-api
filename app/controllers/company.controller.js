@@ -7,6 +7,9 @@ const CompanyResource = require('@resources/company.resource')
 // Base Controller
 const BaseController = require('./base.controller')
 
+// Redis
+const redis = require('@server/redis')
+
 class CompanyController extends BaseController {
     constructor() {
         super()
@@ -21,6 +24,10 @@ class CompanyController extends BaseController {
 
         // Response
         let response = this.responseCollection(companies)
+
+        // Save the  API response in Redis store,  data expire time in 3600 seconds, it means one hour
+        redis.setCache('companies', response)
+
         res.send(response) 
     }
 }

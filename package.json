@@ -6,15 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "seeder": "node database/seeder"
+    "seeder": "node database/seeder",
+    "clear-uploads": "node app/console/commands/clearStorageUploads"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "app-root-path": "^3.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "faker": "^5.5.3",
+    "fs-extra": "^10.0.0",
     "joi": "^17.4.2",
     "module-alias": "^2.2.2",
     "mongoose": "^5.13.5",

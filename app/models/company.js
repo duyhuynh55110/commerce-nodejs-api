@@ -3,7 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const CompanySchema = new Schema({
-    role: Number,
+    image: {
+        type: String,
+        required: true,
+    },
     inform: {
         tax_code: {
             type: String,

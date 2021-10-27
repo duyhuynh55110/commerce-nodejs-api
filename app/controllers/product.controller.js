@@ -10,9 +10,6 @@ const DataNotFoundHttpError = require('@errors/dataNotFoundHttp.error')
 // Base Controller
 const BaseController = require('./base.controller')
 
-// Redis
-const redis = require('@server/redis')
-
 class ProductController extends BaseController {
     constructor() {
         super()
@@ -25,10 +22,6 @@ class ProductController extends BaseController {
 
         // Response
         let response = this.responseCollection(products)
-
-        // Save the  API response in Redis store,  data expire time in 3600 seconds, it means one hour
-        redis.setCache('products', response)
-        
         res.send(response)
     }
 
