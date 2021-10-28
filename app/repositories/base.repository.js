@@ -6,6 +6,7 @@ const {
 
 const mongoose = require("mongoose");
 const { isEmptyObj } = require("@common");
+const { options } = require("joi");
 
 class BaseRepository {
   // Define what model for this repo
@@ -36,18 +37,8 @@ class BaseRepository {
     return this.model.aggregate(query);
   }
 
-  /**
-   * - Paginate improve data speed (base non-unique sort and paginate)
-   * - Find out: https://tutv.dev/fast-pagination-mongodb-69cb8de56d14
-   *
-   * - Attention:
-   * + 'sort' only can by 2 fields 1st is non-unique field and 2nd is '_id'
-   *   Ex: { 'names.en': -1, _id: 1 } | { 'names.en': -1, _id: 1 } | { price: -1, _id: -1 }...
-   *
-   * @param {*} paginateOption
-   * @returns
-   */
-  async paginate({
+  // get docs and paginate
+  paginate({
     select = null,
     match = {},
     limit = PAGINATE_LIMIT_DEFAULT,
@@ -57,27 +48,12 @@ class BaseRepository {
     },
     options = [],
   }) {
-    // Set meta_data
     limit = parseInt(limit);
+    page = parseInt(page);
+    let skip = (page - 1) * limit;
 
-    // Find meta data
-    let metaData = this._setMetaDataPaginate(match, page, limit);
-
-    // page = 1
-    let firstPageLimit = this._isFirstPage(page) ? limit : (page - 1) * limit;
-    const firstPage = await this.model
-      .find(match)
-      .limit(firstPageLimit)
-      .sort(sort);
-
-    // page = n
-    let lastDoc = firstPage[firstPage.length - 1];
-
-    // Set condition
-    match = this._setMatch(sort, lastDoc, match, page);
-
-    // Query get data
-    let data = this._setDataPaginate(select, match, limit, sort, options);
+    let data = this._setDataPaginate(select, match, skip, limit, sort, options);
+    let metaData = this._setMetaDataPaginate(match, limit, page);
 
     return this.model.aggregate([
       {
@@ -97,20 +73,19 @@ class BaseRepository {
     ]);
   }
 
-  // [Paginate] Config 'meta_data' field
-  _setMetaDataPaginate(match, page, limit) {
+  // Config 'meta_data' field
+  _setMetaDataPaginate(match, limit, page) {
     return [
       {
-        $match: match, // Filter valid data
+        $match: match,
       },
-      { $count: "total" }, // Count total record
+      { $count: "total" },
       {
         // add field to calculator paginate inform
         $addFields: {
           per_page: limit,
-          current_page: parseInt(page),
+          current_page: page,
           total_pages: {
-            // Calc total pages
             $ceil: {
               $divide: ["$total", limit],
             },
@@ -125,7 +100,6 @@ class BaseRepository {
           current_page: 1,
           per_page: 1,
           next_page: {
-            // Calc next page
             $cond: {
               if: { $lt: ["$current_page", "$total_pages"] },
               then: {
@@ -135,7 +109,6 @@ class BaseRepository {
             },
           },
           prev_page: {
-            // Calc prev page
             $cond: {
               if: { $gt: ["$current_page", 1] },
               then: {
@@ -149,14 +122,15 @@ class BaseRepository {
     ];
   }
 
-  // [Paginate] Config 'data' field
-  _setDataPaginate(select, match, limit, sort, options) {
+  // Config 'data' field
+  _setDataPaginate(select, match, skip, limit, sort, options) {
     let data = [
       {
         $match: match,
       },
       ...options, // $lookup, $unwind...
-      { $sort: sort },
+      { $sort: sort }, 
+      { $skip: skip },
       { $limit: limit },
     ];
 
@@ -168,76 +142,6 @@ class BaseRepository {
     }
 
     return data;
-  }
-
-  // [Paginate] Check if was first page
-  _isFirstPage(page) {
-    return page == PAGINATE_FIRST_PAGE;
-  }
-
-  // [Paginate] Set filter condition
-  _setMatch(sort, lastDoc, match, page) {
-    // if not have any record
-    if(!lastDoc) return match;
-    
-    let filterSort = [];
-    let skipLastDoc = {};
-
-    // Set sort condition
-    Object.keys(sort).map((key) => {
-      // Determine this key sort by 'ASC' or 'DESC'
-      let sortType = sort[key] == SORT_ASC ? "$gt" : "$lt";
-      let lastDocKeyValue;
-
-      // Skip _id from condition skip last docs
-      if (key != "_id") {
-        // Sort by key in object
-        if (key.includes(".")) {
-          let keySplit = key.split(".");
-          let subDocKey = keySplit[0];
-          let subDocValue = keySplit[1];
-
-          lastDocKeyValue = lastDoc[subDocKey][subDocValue];
-        } else {
-          lastDocKeyValue = lastDoc[key];
-        }
-        skipLastDoc[key] = lastDocKeyValue;
-
-        // Set '$gt' or '$lt' for this key
-        let keySort = {
-          [key]: {
-            [sortType]: lastDocKeyValue,
-          },
-        };
-
-        filterSort.push(keySort);
-      } else {
-        skipLastDoc["_id"] = {
-          [sortType]: lastDoc["_id"],
-        };
-      }
-    });
-
-    // Add condition skip last doc from previous page
-    filterSort.push(skipLastDoc);
-
-    // Return filters condition
-    let newMatch = {
-      $and: [
-        this._isFirstPage(page)
-          ? {}
-          : {
-              // Sort condition
-              $or: filterSort,
-            },
-      ],
-    };
-
-    if (!isEmptyObj(match)) {
-      newMatch["$and"].push(match);
-    }
-
-    return newMatch;
   }
 }
 module.exports = BaseRepository;

@@ -19,7 +19,7 @@ class ProductController extends BaseController {
     index = async (req, res) => {
         let products = await productService.paginate(req.query)
         products.data = ProductResource.collection(products.data)
-
+        
         // Response
         let response = this.responseCollection(products)
         res.send(response)
