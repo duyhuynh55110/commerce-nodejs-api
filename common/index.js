@@ -6,6 +6,7 @@ const {
 const sharp = require("sharp");
 const crypto = require("crypto");
 const fs = require("fs-extra");
+const { urlToSend } = require("@server/httpConfig");
 
 // resize image in storage
 const resizeImageStorage = async (
@@ -38,7 +39,7 @@ const hashName = () => {
 
 // Get path to uploads images
 const uploadImageUrl = (fileName) => {
-  return 'http://localhost:3000' + STORAGE_UPLOADS_STATIC_URL + "/" + fileName;
+  return urlToSend + STORAGE_UPLOADS_STATIC_URL + "/" + fileName;
 };
 
 module.exports = {

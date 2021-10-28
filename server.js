@@ -15,6 +15,9 @@ const mongoose = require("mongoose");
 // Logger
 const logger = require("@server/logger");
 
+// Http config
+const { port } = require("@server/httpConfig");
+
 // constant
 const {
   STORAGE_UPLOADS_STATIC_URL,
@@ -27,7 +30,6 @@ fs.readdirSync(models_path).forEach(function (file) {
   require(models_path + "/" + file);
 });
 
-const port = process.env.APP_PORT || 3000; // set up port
 const app = express(); // use express library
 
 // Static folder (Need setting to access upload images by URL)
@@ -49,7 +51,6 @@ mongooseDebug();
 
 // Global variable
 global.logger = logger;
-
 
 // Connection (Mongoose, listen on port)
 function connect() {
