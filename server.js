@@ -43,6 +43,10 @@ app.use(
  */
 module.exports = app;
 
+// Authentication (Must define before router)
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Routes
 require("@config/routes")(app, passport);
 

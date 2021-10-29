@@ -17,6 +17,7 @@ fs.readdirSync(models_path).forEach(function (file) {
 const CategorySeeder = require('./category.seeder')
 const CompanySeeder = require('./company.seeder')
 const ProductSeeder = require('./product.seeder')
+const UserSeeder = require('./user.seeder')
 
 // Connect to DB
 mongoose.connect(process.env.MONGODB_URL, {
@@ -32,6 +33,7 @@ const importData = async () => {
         await CategorySeeder.importData(CategorySeeder.templateData())
         await CompanySeeder.importData(CompanySeeder.templateData())
         await ProductSeeder.importData(await ProductSeeder.templateData())
+        await UserSeeder.importData(UserSeeder.templateData())
         process.exit()
     } catch (error) {
         console.log(error)
@@ -44,6 +46,7 @@ const deleteData = async () => {
         await CategorySeeder.deleteData()
         await CompanySeeder.deleteData()
         await ProductSeeder.deleteData()
+        await UserSeeder.deleteData()
         process.exit()
     } catch (error) {
         console.log(error)
