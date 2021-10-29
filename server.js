@@ -15,9 +15,6 @@ const mongoose = require("mongoose");
 // Logger
 const logger = require("@server/logger");
 
-// Http config
-const { port } = require("@server/httpConfig");
-
 // constant
 const {
   STORAGE_UPLOADS_STATIC_URL,
@@ -45,7 +42,6 @@ module.exports = app;
 
 // Authentication (Must define before router)
 app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 require("@config/routes")(app, passport);
@@ -91,6 +87,9 @@ function mongooseDebug() {
 // listen connect inform
 function _listen() {
   if (app.get("env") === "test") return;
+
+  // Http config
+  const { port } = require("@server/httpConfig");
 
   app.listen(port);
   console.log("Express app started on port " + port);
