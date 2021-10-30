@@ -19,7 +19,7 @@ class ProductRepository extends BaseRepository {
             'name': '$names.en',
             'description': '$descriptions.en',
             'company': '$company',
-            'category': '$category'
+            'category': '$category',
         }
 
         return this.model.aggregate([
@@ -29,12 +29,9 @@ class ProductRepository extends BaseRepository {
                 }
             },
             {
-                $project: select
-            },
-            {
                 $lookup: {
                     from: 'companies',
-                    localField: 'company',
+                    localField: 'company_id',
                     foreignField: '_id',
                     as: 'company',
                     pipeline: [
@@ -53,7 +50,7 @@ class ProductRepository extends BaseRepository {
             {
                 $lookup: {
                     from: 'categories',
-                    localField: 'category',
+                    localField: 'category_id',
                     foreignField: '_id',
                     as: 'category',
                     pipeline: [
@@ -72,7 +69,10 @@ class ProductRepository extends BaseRepository {
             },
             {
                 $unwind: '$category'
-            }
+            },
+            {
+                $project: select
+            },
         ])
     }
 

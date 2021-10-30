@@ -50,8 +50,8 @@ class ProductSeeder extends BaseSeeder {
       
       return {
         price: parseInt(faker.commerce.price()),
-        category: categoryId,
-        company: (index < 10) ? process.env.COMPANY_ID_SEEDER : companyId,
+        company_id: (index < 10) ? process.env.COMPANY_ID_SEEDER : companyId,
+        category_id: categoryId,
         image: imageName,
         descriptions: {
           en: productDescription + " EN",

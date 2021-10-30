@@ -6,8 +6,8 @@ const TranslateSchema = require('./translation')
 
 const ProductSchema = new Schema({
     price: Number,
-    company: { type: Schema.Types.ObjectId, ref: 'Company' },
-    category: { type: Schema.Types.ObjectId, ref: 'Category' },
+    company_id: { type: Schema.Types.ObjectId, ref: 'Company' },
+    category_id: { type: Schema.Types.ObjectId, ref: 'Category' },
     names: TranslateSchema,
     descriptions: TranslateSchema,
     image: String,

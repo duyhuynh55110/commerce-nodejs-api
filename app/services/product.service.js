@@ -21,7 +21,7 @@ class ProductService {
 
     // Filter company id
     if(company_id != null) {
-        match.company = mongoose.Types.ObjectId(company_id);
+        match.company_id = mongoose.Types.ObjectId(company_id);
     }
 
     // Response products list
