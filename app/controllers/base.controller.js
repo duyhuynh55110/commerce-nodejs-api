@@ -2,11 +2,11 @@ const { API_MESSAGE_SUCCESS, HTTP_CODE_OK } = require('@lib/constants')
 
 class BaseController {
     // Response data single 
-    responseSingle = (data) => {
+    responseSingle = (data, message = API_MESSAGE_SUCCESS) => {
         return {
             code: HTTP_CODE_OK,
             data: data,
-            message: API_MESSAGE_SUCCESS 
+            message: message, 
         }
     }
 

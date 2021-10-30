@@ -29,7 +29,7 @@ fs.readdirSync(models_path).forEach(function (file) {
 
 const app = express(); // use express library
 
-// Static folder (Need setting to access upload images by URL)
+// Static folder (Need to access upload images by URL)
 app.use(
   STORAGE_UPLOADS_STATIC_URL,
   express.static(__dirname + "/" + STORAGE_UPLOADS_PATH)
@@ -39,9 +39,6 @@ app.use(
  * Expose
  */
 module.exports = app;
-
-// Authentication (Must define before router)
-app.use(passport.initialize());
 
 // Routes
 require("@config/routes")(app, passport);

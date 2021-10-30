@@ -10,9 +10,6 @@ const BaseSeeder = require('./base.seeder')
 // Faker make random data
 const faker = require('faker/locale/en')
 
-// bcrypt 
-const bcrypt = require('bcrypt')
-
 // Common
 const { randomNumber } = require("@common");
 
@@ -32,13 +29,12 @@ class UserSeeder extends BaseSeeder {
                 `/storage/templates/users/${randomProductImage}.png`, 
                 '/storage/uploads/'
             );
-            let password = bcrypt.hashSync('12345678', 10);
             
             return {
                 _id: null,
                 name: index == 0 ? 'Test User' : faker.name.findName(),
                 email: index == 0 ? 'user.local@gmail.com' : faker.internet.email(),
-                password: password,
+                password: '12345678',
                 image: imageName,
             }
         })

@@ -1,11 +1,13 @@
 "use strict";
 const express = require("express");
-/*
- * Module dependencies.
+
+/** 
+ * Controllers
  */
 const companyController = require("@controllers/company.controller");
 const productController = require("@controllers/product.controller");
 const categoryController = require("@controllers/category.controller");
+const authController =  require("@controllers/auth.controller");
 
 /**
  * Error handling
@@ -18,8 +20,9 @@ const {
 // Redis
 const redis = require("@server/redis");
 
-// Upload image
-const imageUpload = require("@middleware/uploadImage.middleware");
+// Middleware
+const imageUpload = require("@middleware/uploadImage.middleware"); // upload image
+const auth = require("@middleware/auth.middleware"); // authentication
 
 // Request
 const productFormRequest = require("../app/requests/productForm.request");
@@ -65,6 +68,12 @@ module.exports = function (app, passport) {
     [redis.cacheMiddleware("categories")],
     categoryController.index
   );
+
+  // Authentication
+  app.get("/profile", auth, authController.profile);
+  app.post("/login", authController.login);
+  app.post("/logout", auth, authController.logout);
+  app.post("/logout-all", auth, authController.logoutAll);
 
   // === Middleware call AFTER run route (HTTP response)
   // error handling middleware
