@@ -47,6 +47,7 @@
     "@common": "common",
     "@middleware": "app/middleware",
     "@errors": "app/errors",
+    "@requests": "app/requests",
     "@server": "server"
   },
   "_moduleDirectories": [

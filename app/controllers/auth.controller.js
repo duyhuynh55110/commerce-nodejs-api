@@ -26,9 +26,6 @@ class LoginController extends BaseController {
 
       // Verify email, password is valid or not
       const user = await User.findByCredentials(email, password);
-      if (!user) {
-        throw new AuthError("login failed! your email or password is invalid.");
-      }
 
       // Generate new token
       const access_token = await user.generateAuthToken();

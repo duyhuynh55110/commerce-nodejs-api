@@ -25,7 +25,8 @@ const imageUpload = require("@middleware/uploadImage.middleware"); // upload ima
 const auth = require("@middleware/auth.middleware"); // authentication
 
 // Request
-const productFormRequest = require("../app/requests/productForm.request");
+const productFormRequest = require("@requests/productForm.request");
+const loginFormRequest = require("@requests/loginForm.request");
 
 // CORS
 const cors = require("cors");
@@ -71,7 +72,7 @@ module.exports = function (app, passport) {
 
   // Authentication
   app.get("/profile", auth, authController.profile);
-  app.post("/login", authController.login);
+  app.post("/login", loginFormRequest.validate(), authController.login);
   app.post("/logout", auth, authController.logout);
   app.post("/logout-all", auth, authController.logoutAll);
 
