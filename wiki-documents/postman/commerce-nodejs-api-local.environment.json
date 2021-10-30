@@ -1,14 +1,19 @@
 {
-	"id": "c945772d-8e1b-4edc-a9bf-778fc42f825a",
+	"id": "b083e069-c95e-4e65-8612-afcb67ccaea0",
 	"name": "commerce-nodejs-api-local",
 	"values": [
 		{
 			"key": "API_URL",
 			"value": "http://localhost:3000",
 			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2021-10-19T06:21:25.199Z",
+	"_postman_exported_at": "2021-10-30T07:44:53.452Z",
 	"_postman_exported_using": "Postman/7.36.5"
 }

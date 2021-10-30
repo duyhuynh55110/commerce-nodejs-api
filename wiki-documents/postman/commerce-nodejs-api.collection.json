@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "425623a2-78fa-41e3-8d92-82273c4bab7d",
+		"_postman_id": "809736bf-b328-4707-82ed-9cc0a34c8378",
 		"name": "commerce-nodejs-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -46,7 +46,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/products?limit=10&page=1",
+							"raw": "{{API_URL}}/products?limit=10&page=1&company_id=616e2d1e8ceeb00ffd7bf49c",
 							"host": [
 								"{{API_URL}}"
 							],
@@ -61,6 +61,10 @@
 								{
 									"key": "page",
 									"value": "1"
+								},
+								{
+									"key": "company_id",
+									"value": "616e2d1e8ceeb00ffd7bf49c"
 								}
 							]
 						}
@@ -91,7 +95,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "616e2d1e8ceeb00ffd7bf52e"
+									"value": "617c959de1d8a3013305bd2e",
+									"description": "products._id"
 								}
 							]
 						}
@@ -212,6 +217,123 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"omari26@gmail.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL}}/login",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/logout",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout-all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/logout-all",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"logout-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL}}/profile",
+					"host": [
+						"{{API_URL}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
