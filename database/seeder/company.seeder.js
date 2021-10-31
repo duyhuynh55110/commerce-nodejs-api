@@ -43,7 +43,7 @@ class CompanySeeder extends BaseSeeder {
                     phone: faker.phone.phoneNumber('##########'),
                     email: faker.internet.email(),
                     image: imageName,
-                    description: faker.lorem.paragraph(250),
+                    description: faker.lorem.paragraph(3),
                 }
             }
         })
