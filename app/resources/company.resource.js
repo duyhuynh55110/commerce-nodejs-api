@@ -12,6 +12,8 @@ class CompanyResource extends Resource {
             phone: this.inform.phone,
             email: this.inform.email,
             image: uploadImageUrl(this.inform.image),
+            description: this.inform?.description,
+            total_products: this?.total_products,
         }
     }
 }

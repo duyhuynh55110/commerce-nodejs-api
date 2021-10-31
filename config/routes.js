@@ -44,9 +44,9 @@ module.exports = function (app, passport) {
 
   // === Define routes
   // Companies
+  app.get("/companies/:id", companyController.show);
   app.get(
     "/companies",
-    [redis.cacheMiddleware("companies")],
     companyController.index
   );
 

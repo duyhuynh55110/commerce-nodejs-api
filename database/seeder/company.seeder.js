@@ -12,6 +12,7 @@ const faker = require('faker/locale/en')
 
 // Common 
 const { randomNumber } = require('@common')
+const { fake } = require('faker')
 class CompanySeeder extends BaseSeeder {
     constructor() {
         super()
@@ -42,6 +43,7 @@ class CompanySeeder extends BaseSeeder {
                     phone: faker.phone.phoneNumber('##########'),
                     email: faker.internet.email(),
                     image: imageName,
+                    description: faker.lorem.paragraph(250),
                 }
             }
         })

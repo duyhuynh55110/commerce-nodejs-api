@@ -13,6 +13,10 @@ const CompanySchema = new Schema({
         phone: String,
         email: String,
         image: String,
+        description: {
+            type: String,
+            max: 512,
+        },
     },
 }, { collection : 'companies', versionKey: false })
 
