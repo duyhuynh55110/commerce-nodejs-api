@@ -6,6 +6,9 @@ const Company = mongoose.model("Company");
 // base repo for all repo
 const BaseRepository = require("./base.repository");
 
+// Data not found error
+const DataNotFoundHttpError = require('@errors/dataNotFoundHttp.error');
+
 class CompanyRepository extends BaseRepository {
   constructor() {
     super();
@@ -19,10 +22,16 @@ class CompanyRepository extends BaseRepository {
       inform: "$inform",
     }
   ) {
+    try {
+      id = mongoose.Types.ObjectId(id);
+    } catch (e) {
+      throw new DataNotFoundHttpError();
+    }
+
     return this.model.aggregate([
       {
         $match: {
-          _id: mongoose.Types.ObjectId(id),
+          _id: id,
         },
       },
       {
