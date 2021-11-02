@@ -32,7 +32,7 @@ class LoginController extends BaseController {
 
       // Response
       let userResource = new UserResource(user).exec();
-      res.send(this.responseSingle({ user: userResource, access_token }));
+      res.send(this.responseSingle({ auth: userResource, access_token }));
     } catch (error) {
       next(error);
     }
