@@ -12,7 +12,9 @@ class ProductService {
     const select = {
       price: "$price",
       name: "$names.en",
-      description: "$descriptions.en",
+      description: {
+        $substr: ["$descriptions.en", 0, 100]
+      },
       image: "$image",
     };
 

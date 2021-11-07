@@ -19,6 +19,7 @@ class ProductRepository extends BaseRepository {
     const select = {
       price: "$price",
       name: "$names.en",
+      image: "$image",
       description: "$descriptions.en",
       company: "$company",
       category: "$category",

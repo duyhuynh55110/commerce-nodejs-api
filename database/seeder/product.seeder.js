@@ -39,9 +39,9 @@ class ProductSeeder extends BaseSeeder {
         }, []);
     });
 
-    return [...Array(100)].map(function (element, index) {
+    return [...Array(150)].map(function (element, index) {
       let productName = faker.commerce.productName();
-      let productDescription = faker.commerce.productDescription();
+      let productDescription = faker.lorem.paragraph(25);
       let categoryId = categoryIds[randomNumber(0, categoryIds.length - 1)];
       let companyId = companyIds[randomNumber(0, companyIds.length - 1)];
 
@@ -50,7 +50,7 @@ class ProductSeeder extends BaseSeeder {
       
       return {
         price: parseInt(faker.commerce.price()),
-        company_id: (index < 10) ? process.env.COMPANY_ID_SEEDER : companyId,
+        company_id: (index < 25) ? process.env.COMPANY_ID_SEEDER : companyId,
         category_id: categoryId,
         image: imageName,
         descriptions: {
